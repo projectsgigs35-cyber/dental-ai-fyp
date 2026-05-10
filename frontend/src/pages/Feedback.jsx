@@ -3,6 +3,7 @@ import { FiSend, FiAlertCircle, FiCheckCircle } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { API_URL } from '../api/config';
 
 export default function Feedback() {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ export default function Feedback() {
 
     try {
       await axios.post(
-        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/feedback`,
+        `${API_URL}/feedback`,
         formData
       );
 

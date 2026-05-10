@@ -4,6 +4,7 @@ import api from '../api/axios';
 import { FiActivity, FiFileText, FiUser, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { API_HOST } from '../api/config';
 
 function StatCard({ icon: Icon, label, value, color }) {
   return (
@@ -55,7 +56,7 @@ export default function Dashboard() {
         <h2 className="text-base font-semibold text-gray-800 dark:text-white mb-4">Your Profile</h2>
         <div className="flex items-start gap-5">
           {doctor?.picture ? (
-            <img src={`http://localhost:5000${doctor.picture}`} alt="Profile" className="w-20 h-20 rounded-2xl object-cover border-2 border-gray-100 dark:border-gray-700" />
+            <img src={`${API_HOST}${doctor.picture}`} alt="Profile" className="w-20 h-20 rounded-2xl object-cover border-2 border-gray-100 dark:border-gray-700" />
           ) : (
             <div className="w-20 h-20 rounded-2xl bg-blue-600 flex items-center justify-center text-white font-bold text-2xl">
               {doctor?.name?.charAt(0)}

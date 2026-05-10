@@ -4,6 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 import { FiSun, FiMoon, FiSave, FiLock, FiUpload } from 'react-icons/fi';
+import { API_HOST } from '../api/config';
 
 export default function Settings() {
   const { doctor, updateDoctor } = useAuth();
@@ -77,7 +78,7 @@ export default function Settings() {
         <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">Edit Profile</p>
         <div className="flex items-center gap-4 mb-5">
           {preview ? <img src={preview} alt="Preview" className="w-16 h-16 rounded-full object-cover border-2 border-blue-200" />
-            : doctor?.picture ? <img src={`http://localhost:5000${doctor.picture}`} alt="Profile" className="w-16 h-16 rounded-full object-cover" />
+            : doctor?.picture ? <img src={`${API_HOST}${doctor.picture}`} alt="Profile" className="w-16 h-16 rounded-full object-cover" />
             : <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">{doctor?.name?.charAt(0)}</div>}
           <button onClick={() => pictureRef.current.click()} className="btn-secondary text-sm flex items-center gap-2">
             <FiUpload className="w-4 h-4" /> Change Photo

@@ -5,6 +5,7 @@ import {
 } from 'react-icons/fi';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { API_HOST } from '../api/config';
 
 const navItems = [
   { to: '/dashboard', icon: FiGrid, label: 'Dashboard' },
@@ -41,7 +42,7 @@ export default function Layout() {
         <div className="flex items-center gap-3">
           {doctor?.picture ? (
             <img
-              src={`http://localhost:5000${doctor.picture}`}
+              src={`${API_HOST}${doctor.picture}`}
               alt="Profile"
               className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
             />

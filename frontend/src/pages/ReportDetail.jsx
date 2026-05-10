@@ -99,7 +99,7 @@ export default function ReportDetail() {
           <div>
             <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Annotated Image</p>
             <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-              <img src={`http://localhost:5000${report.annotatedImage}`} alt="Annotated" className="w-full object-contain max-h-96" />
+              <img src={`${API_HOST}${report.annotatedImage}`} alt="Annotated" className="w-full object-contain max-h-96" />
             </div>
           </div>
         )}
